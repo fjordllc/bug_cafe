@@ -24,13 +24,8 @@ $ git checkout -b debug main
 ```
 
 5. cafe.rb の間違い箇所を修正してください。
-6. 完成したら、提出前にrubocopを実行し、警告の場所を修正してください。
 
-```
-$ rubocop
-```
-
-7. Pull Requestを作成し、URLを提出してください。
+6. 完成したら、Pull Requestを作成し、URLを提出してください。
 Pull Requestの作成画面では、merge先として **自分自身のアカウントのbug_cafeリポジトリ** を指定してください。
 また、**作成したPull Requestは提出後に確認OKをもらうまでmergeのボタンを押さないでください。**
 ![Pull Request作成画面](https://user-images.githubusercontent.com/2603449/99864665-0c145c00-2be8-11eb-8501-14bd484529f2.png)
