@@ -9,7 +9,7 @@ DRINKS = [
 ].freeze
 
 FOODS = [
-  { name: 'チーズケーキ', price: '460' },
+  { name: 'チーズケーキ', price: '470' },
   { name: 'アップルパイ', price: '520' },
   { name: 'ホットサンド', price: '410' }
 ].freeze
