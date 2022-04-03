@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-require 'debug'
 
 DRINKS = [
   { name: 'コーヒー', price: 300 },
