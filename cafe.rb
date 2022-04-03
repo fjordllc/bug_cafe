@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'debug'
 
 DRINKS = [
   { name: 'コーヒー', price: '300' },
@@ -19,7 +20,7 @@ def take_order(menus)
     puts "(#{i})#{menu[:name]}: #{menu[:price]}円"
   end
   print '>'
-  order_number = gets.to_i
+  order_number = gets.to_i - 1
   puts "#{menus[order_number][:name]}(#{menus[order_number][:price]}円)ですね。"
   order_number
 end
