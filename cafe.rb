@@ -30,6 +30,5 @@ order1 = take_order(DRINKS)
 puts 'フードメニューはいかがですか?'
 order2 = take_order(FOODS)
 
-binding.irb
 total = DRINKS[order1][:price].to_i + FOODS[order2][:price].to_i
 puts "お会計は#{total}円になります。ありがとうございました！"
