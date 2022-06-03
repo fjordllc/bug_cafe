@@ -1,12 +1,12 @@
 # frozen_string_literal: true
-
+require "debug"
 DRINKS = [
   { name: 'コーヒー', price: '300' },
   { name: 'カフェラテ', price: '400' },
   { name: 'チャイ', price: '460' },
   { name: 'エスプレッソ', price: '340' },
   { name: '緑茶', price: '450' }
-].freeze
+].freeze #freezeを使用することで定数の変更を防ぐ
 
 FOODS = [
   { name: 'チーズケーキ', price: '470' },
@@ -16,19 +16,20 @@ FOODS = [
 
 def take_order(menus)
   menus.each.with_index(1) do |menu, i|
-    puts "(#{i})#{menu[:name]}: #{menu[:price]}円"
+    puts "(#{i})#{menu[:name]}: #{menu[:price]}円" #DRINKS , FOODS の menu表示
   end
   print '>'
   order_number = gets.to_i
+  order_number -= 1 #配列の振り分けが0からなので入力した数字に -1 をして取得するデータと表示されているデータ番号を調整
   puts "#{menus[order_number][:name]}(#{menus[order_number][:price]}円)ですね。"
   order_number
 end
 
 puts 'bugカフェへようこそ！ご注文は？ 番号でどうぞ'
-order1 = take_order(DRINKS)
+order1 = take_order(DRINKS) #take_orderに最初はDRINKSの配列を引数にして呼び出す
 
-puts 'フードメニューはいかがですか?'
-order2 = take_order(FOODS)
+puts 'フードメニューはいかがですか?' 
+order2 = take_order(FOODS) #FOODSの配列を引数にして呼び出す
 
-total = FOODS[order1][:price] + DRINKS[order2][:price]
+total = FOODS[order1][:price].to_i + DRINKS[order2][:price].to_i #Integreに変更することで足し算を可能にする
 puts "お会計は#{total}円になります。ありがとうございました！"
