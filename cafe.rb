@@ -27,9 +27,10 @@ end
 
 puts 'bugカフェへようこそ！ご注文は？ 番号でどうぞ'
 order1 = take_order(DRINKS) #take_orderに最初はDRINKSの配列を引数にして呼び出す
-
+order1
 puts 'フードメニューはいかがですか?' 
 order2 = take_order(FOODS) #FOODSの配列を引数にして呼び出す
-
-total = FOODS[order1][:price].to_i + DRINKS[order2][:price].to_i #Integreに変更することで足し算を可能にする
+order2 
+total = DRINKS[order1][:price].to_i + FOODS[order2][:price].to_i 
+#Integreに変更することで足し算を可能にする #DRINKSとFOODSのorderの関係性が逆になっていたのを修正
 puts "お会計は#{total}円になります。ありがとうございました！"
