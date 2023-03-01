@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'debug'
+
 DRINKS = [
   { name: 'コーヒー', price: '300' },
   { name: 'カフェラテ', price: '400' },
@@ -14,21 +16,28 @@ FOODS = [
   { name: 'ホットサンド', price: '410' }
 ].freeze
 
-def take_order(menus)
+def print_menus(menus)
   menus.each.with_index(1) do |menu, i|
     puts "(#{i})#{menu[:name]}: #{menu[:price]}円"
   end
   print '>'
-  order_number = gets.to_i
+end
+
+def take_order(menus)
+  # debugger
+  order_number = gets.to_i - 1
   puts "#{menus[order_number][:name]}(#{menus[order_number][:price]}円)ですね。"
   order_number
 end
 
 puts 'bugカフェへようこそ！ご注文は？ 番号でどうぞ'
+print_menus(DRINKS)
 order1 = take_order(DRINKS)
 
 puts 'フードメニューはいかがですか?'
+print_menus(FOODS)
 order2 = take_order(FOODS)
 
-total = FOODS[order1][:price] + DRINKS[order2][:price]
+total = DRINKS[order1][:price].to_i + FOODS[order2][:price].to_i
+# debugger
 puts "お会計は#{total}円になります。ありがとうございました！"
