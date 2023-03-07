@@ -32,12 +32,12 @@ end
 
 puts 'bugカフェへようこそ！ご注文は？ 番号でどうぞ'
 print_menus(DRINKS)
-order1 = take_order(DRINKS)
+order_drink = take_order(DRINKS)
 
 puts 'フードメニューはいかがですか?'
 print_menus(FOODS)
-order2 = take_order(FOODS)
+order_foods = take_order(FOODS)
 
-total = DRINKS[order1][:price].to_i + FOODS[order2][:price].to_i
+total = DRINKS[order_drink][:price].to_i + FOODS[order_foods][:price].to_i
 # debugger
 puts "お会計は#{total}円になります。ありがとうございました！"
