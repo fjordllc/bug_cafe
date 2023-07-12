@@ -25,8 +25,6 @@ def take_order(menus)
   order_number
 end
 
-#binding.break
-
 puts 'bugカフェへようこそ！ご注文は？ 番号でどうぞ'
 order1 = take_order(DRINKS)
 
