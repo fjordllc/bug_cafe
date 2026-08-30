@@ -11,22 +11,18 @@ FOODS = [
   { name: 'アップルパイ', price: 520 },
   { name: 'ホットサンド', price: 410 }
 ].freeze
-
 def take_order(menus)
-  numbered_menus = menus.each.with_index(1).to_h { |menu, i| [i, menu] }
-  numbered_menus.each do |i, menu|
+  menus.each.with_index(1) do |menu, i|
     puts "(#{i})#{menu[:name]}: #{menu[:price]}円"
   end
   print '>'
   order_number = gets.to_i
-  menu = numbered_menus[order_number]
-  puts "#{menu[:name]}(#{menu[:price]}円)ですね。"
-  menu
+  puts "#{menus[order_number - 1][:name]}(#{menus[order_number - 1][:price]}円)ですね。"
+  order_number
 end
-
 puts 'bugカフェへようこそ！ご注文は？ 番号でどうぞ'
 order1 = take_order(DRINKS)
 puts 'フードメニューはいかがですか?'
 order2 = take_order(FOODS)
-total = order1[:price] + order2[:price]
+total = DRINKS[order1 - 1][:price] + FOODS[order2 - 1][:price]
 puts "お会計は#{total}円になります。ありがとうございました！"
